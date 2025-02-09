@@ -1,99 +1,101 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const projectCategories = ['All', 'Web Apps', 'Mobile Apps', 'UI/UX', 'Backend'];
+const projectCategories = ['All', 'Web Apps', 'Event Management', 'UI/UX', 'Backend'];
 
 const projects = [
   {
     id: 1,
     title: 'E-Commerce Platform',
     category: 'Web Apps',
-    image: 'https://images.unsplash.com/photo-1661956602116-aa6865609028?q=80&w=1664&auto=format&fit=crop',
-    description: 'A modern e-commerce platform with real-time inventory, AI-powered recommendations, and seamless payment integration.',
+    image: '/mockup/luixe_shop_mockup.png',
+    description: 'A Modern E-Commerce Platform with Print on demand( Customize the product as per your choice).',
     technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    link: '#',
-    github: '#'
+    link: 'https://www.luixen.shop/',
+
   },
   {
     id: 2,
     title: 'Analytics Dashboard',
-    category: 'Web Apps',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop',
+    category: 'Backend',
+    image: '/mockup/hellobugify-analytics-dashboard.png',
     description: 'Real-time analytics dashboard with interactive charts, customizable widgets, and predictive insights.',
-    technologies: ['Next.js', 'Firebase', 'TailwindCSS', 'D3.js'],
-    link: '#',
-    github: '#'
+    technologies: ['Next.js', 'Firebase', 'TailwindCSS'],
+    link: 'https://hellobugify.com/',
+
+
   },
   {
     id: 3,
-    title: 'Fitness Companion App',
-    category: 'Mobile Apps',
-    image: 'https://images.unsplash.com/photo-1605296867424-35fc25c9212a?q=80&w=1470&auto=format&fit=crop',
-    description: 'AI-powered fitness app with personalized workout plans, nutrition tracking, and real-time progress monitoring.',
-    technologies: ['React Native', 'Redux', 'TensorFlow', 'Node.js'],
-    link: '#',
-    github: '#'
+    title: 'Blog App',
+    category: 'Web Apps',
+    image: '/mockup/hellobugify_mockup.png',
+    description: 'A Blog App with a modern design and a clean interface.',
+    technologies: ['React', 'Node.js', 'MongoDB'],
+    link: 'https://hellobugify.com',
+
+
   },
   {
     id: 4,
-    title: 'Design System Framework',
+    title: 'Faiz International',
     category: 'UI/UX',
-    image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1470&auto=format&fit=crop',
+    image: '/mockup/Faiz_mockup.png',
     description: 'Comprehensive design system with reusable components, documentation, and theme customization.',
-    technologies: ['Figma', 'Storybook', 'React', 'styled-components'],
-    link: '#',
-    github: '#'
+    technologies: ['Figma', 'Vue.js', 'TailwindCSS'],
+    link: 'https://faiz-international.netlify.app',
+
   },
   {
     id: 5,
-    title: 'Cloud Infrastructure',
-    category: 'Backend',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1470&auto=format&fit=crop',
+    title: 'Mutual Fund Advisor',
+    category: 'UI/UX',
+    image: '/mockup/patronics_mockup.png',
     description: 'Scalable microservices architecture with automated deployment, monitoring, and security features.',
-    technologies: ['AWS', 'Docker', 'Kubernetes', 'Terraform'],
-    link: '#',
-    github: '#'
+    technologies: ['Figma', 'React', 'TailwindCSS'],
+    link: 'https://patronics.vercel.app',
+
   },
   {
     id: 6,
-    title: 'AI Content Generator',
+    title: 'AI Background remover',
     category: 'Web Apps',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1632&auto=format&fit=crop',
+    image: '/mockup/clear-background.png',
     description: 'Advanced content generation platform using GPT-4 for creating marketing copy, blog posts, and social media content.',
     technologies: ['OpenAI API', 'Vue.js', 'Python', 'FastAPI'],
     link: '#',
-    github: '#'
+
   },
   {
     id: 7,
-    title: 'Smart Home Hub',
-    category: 'Mobile Apps',
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=1470&auto=format&fit=crop',
-    description: 'IoT-based smart home control system with voice commands, automation rules, and energy optimization.',
-    technologies: ['Flutter', 'MQTT', 'Node.js', 'MongoDB'],
-    link: '#',
-    github: '#'
+    title: 'Event Management',
+    category: 'Event Management',
+    image: '/mockup/tvep_web_mockup.png',
+    description: 'Event Management System for The Varanasi Event Planner',
+    technologies: ['React', 'Node.js', 'MongoDB'],
+    link: 'https://www.varanasieventplanner.com',
+
   },
-  {
-    id: 8,
-    title: 'Blockchain Explorer',
-    category: 'Backend',
-    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1632&auto=format&fit=crop',
-    description: 'Real-time blockchain data explorer with transaction tracking, smart contract analysis, and network statistics.',
-    technologies: ['Web3.js', 'Node.js', 'GraphQL', 'PostgreSQL'],
-    link: '#',
-    github: '#'
-  },
-  {
-    id: 9,
-    title: 'AR Product Viewer',
-    category: 'UI/UX',
-    image: 'https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=1470&auto=format&fit=crop',
-    description: 'Augmented reality product visualization tool for e-commerce, with 3D model support and interactive features.',
-    technologies: ['Three.js', 'WebXR', 'React', 'WebGL'],
-    link: '#',
-    github: '#'
-  }
+  // {
+  //   id: 8,
+  //   title: 'Blockchain Explorer',
+  //   category: 'Backend',
+  //   image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1632&auto=format&fit=crop',
+  //   description: 'Real-time blockchain data explorer with transaction tracking, smart contract analysis, and network statistics.',
+  //   technologies: ['Web3.js', 'Node.js', 'GraphQL', 'PostgreSQL'],
+  //   link: '#',
+  //   github: '#'
+  // },
+  // {
+  //   id: 9,
+  //   title: 'AR Product Viewer',
+  //   category: 'UI/UX',
+  //   image: 'https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=1470&auto=format&fit=crop',
+  //   description: 'Augmented reality product visualization tool for e-commerce, with 3D model support and interactive features.',
+  //   technologies: ['Three.js', 'WebXR', 'React', 'WebGL'],
+  //   link: '#',
+  //   github: '#'
+  // }
 ];
 
 const Projects = () => {
@@ -112,7 +114,7 @@ const Projects = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const filteredProjects = projects.filter(project => 
+  const filteredProjects = projects.filter(project =>
     selectedCategory === 'All' || project.category === selectedCategory
   );
 
@@ -172,11 +174,10 @@ const Projects = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-full transition-all duration-300 ${
-                  selectedCategory === category
-                    ? 'bg-primary text-white shadow-[0_0_15px_rgba(124,58,237,0.5)]'
-                    : 'bg-glass backdrop-blur-sm text-gray-400 hover:text-white hover:shadow-[0_0_10px_rgba(124,58,237,0.3)]'
-                }`}
+                className={`px-6 py-2 rounded-full transition-all duration-300 ${selectedCategory === category
+                  ? 'bg-primary text-white shadow-[0_0_15px_rgba(124,58,237,0.5)]'
+                  : 'bg-glass backdrop-blur-sm text-gray-400 hover:text-white hover:shadow-[0_0_10px_rgba(124,58,237,0.3)]'
+                  }`}
               >
                 {category}
               </motion.button>
@@ -277,7 +278,7 @@ const Projects = () => {
                 >
                   View Live
                 </motion.a>
-                <motion.a
+                {/* <motion.a
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   href={selectedProject.github}
@@ -286,7 +287,7 @@ const Projects = () => {
                   className="px-6 py-3 rounded-lg border border-primary/20 text-primary hover:bg-primary/10 transition-colors"
                 >
                   Source Code
-                </motion.a>
+                </motion.a> */}
               </div>
             </motion.div>
           </motion.div>

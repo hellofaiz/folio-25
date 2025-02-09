@@ -2,11 +2,11 @@ import { motion } from 'framer-motion';
 
 const Footer = () => {
   const socialLinks = [
-    { name: 'GitHub', url: '#' },
-    { name: 'LinkedIn', url: '#' },
-    { name: 'Twitter', url: '#' },
-    { name: 'Instagram', url: '#' },
+    { name: 'GitHub', url: 'https://github.com/faintu' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/faintu/' },
+    { name: 'Instagram', url: 'https://www.instagram.com/hellobugify' },
   ];
+
 
   return (
     <footer className="bg-background-light mt-auto">
@@ -15,7 +15,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="text-2xl font-display font-bold gradient-text">
-              Portfolio
+              Faintu
             </h3>
             <p className="text-gray-400 max-w-xs">
               Crafting digital experiences with passion and precision.
@@ -29,10 +29,11 @@ const Footer = () => {
               {['Home', 'Projects', 'Contact', 'Resume'].map((item) => (
                 <li key={item}>
                   <motion.a
-                    href="#"
+                    href={item === 'Home' ? '/' : item === 'Projects' ? '/projects' : item === 'Contact' ? '/contact' : '/resume'}
                     whileHover={{ x: 5 }}
                     className="text-gray-400 hover:text-primary transition-colors"
                   >
+
                     {item}
                   </motion.a>
                 </li>
@@ -60,7 +61,7 @@ const Footer = () => {
 
         <div className="mt-8 pt-8 border-t border-gray-800">
           <p className="text-center text-gray-400">
-            © {new Date().getFullYear()} Portfolio. All rights reserved.
+            © {new Date().getFullYear()} Faintu. All rights reserved.
           </p>
         </div>
       </div>

@@ -16,14 +16,16 @@ const featuredProjects = [
     title: 'AI-Powered Analytics',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop',
     description: 'Next-generation analytics platform with machine learning insights and predictive modeling.',
-    technologies: ['React', 'TensorFlow.js', 'Python', 'D3.js']
+    technologies: ['React', 'Python', 'D3.js']
   },
   {
     id: 2,
-    title: 'Smart IoT Platform',
+    title: 'AI Remove Background',
     image: 'https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=1470&auto=format&fit=crop',
-    description: 'Comprehensive IoT management system with real-time monitoring and automation capabilities.',
-    technologies: ['Node.js', 'MQTT', 'React', 'MongoDB']
+    description: 'Comprehensive AI remove background system with real-time monitoring and automation capabilities.',
+    technologies: ['Next.js', 'Tailwind CSS', 'Figma']
+
+
   }
 ];
 
@@ -88,24 +90,24 @@ const skills = [
     level: 'Advanced',
     experience: '3+ years'
   },
-  {
-    name: 'AWS',
-    icon: '☁️',
-    level: 'Advanced',
-    experience: '4+ years'
-  },
-  {
-    name: 'Docker',
-    icon: '🐳',
-    level: 'Advanced',
-    experience: '3+ years'
-  },
-  {
-    name: 'Python',
-    icon: '🐍',
-    level: 'Advanced',
-    experience: '4+ years'
-  }
+  // {
+  //   name: 'AWS',
+  //   icon: '☁️',
+  //   level: 'Advanced',
+  //   experience: '4+ years'
+  // },
+  // {
+  //   name: 'Docker',
+  //   icon: '🐳',
+  //   level: 'Advanced',
+  //   experience: '3+ years'
+  // },
+  // {
+  //   name: 'Python',
+  //   icon: '🐍',
+  //   level: 'Advanced',
+  //   experience: '4+ years'
+  // }
 ];
 
 const Home = () => {
@@ -391,6 +393,7 @@ const Home = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="glow-button"
+              onClick={() => window.location.href = '/contact'}
             >
               Get in Touch
             </motion.button>

@@ -22,7 +22,7 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               className="text-2xl font-display font-bold gradient-text"
             >
-              Portfolio
+              Faintu
             </motion.div>
           </Link>
 
@@ -47,13 +47,13 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <motion.button
+            {/* <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="glow-button"
             >
               Resume
-            </motion.button>
+            </motion.button> */}
           </div>
 
           {/* Mobile Navigation Button */}
