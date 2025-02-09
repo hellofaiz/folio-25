@@ -1,11 +1,8 @@
 {
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/node",
-      "config": {
-        "installCommand": "npm install --force --legacy-peer-deps"
+  "rewrites": [
+      {
+          "source": "/(.*)",
+          "destination": "/index.html"
       }
-    }
   ]
-} 
+}
